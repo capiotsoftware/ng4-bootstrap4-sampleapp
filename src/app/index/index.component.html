@@ -1,0 +1,37 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse bg-faded">
+  <h1 class="navbar-brand mb-0">ng4-bootstrap4</h1>
+  <div class="navbar-collapse">
+    <div class="navbar-nav mr-auto">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="" [routerLink]="['s1']">Page 1</a>
+      <a class="nav-item nav-link" href="" [routerLink]="['s2']">Page 2</a>
+    </div>
+    <div class="my-2 my-lg-0">
+      <button class="btn btn-outline-warning my-2 my-sm-0" (click)="logout()">Log out</button>
+    </div>
+  </div>
+</nav>
+<div class="content mt-5">
+  <div class="row">
+    <div class="col-md-4 offset-md-1 card">
+      <div class="form-group" [class.has-danger]="searchFailed">
+        <label for="typeahead-http">Search for posts:</label>
+        <input id="typeahead-http" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="searchPosts" placeholder="Search for posts"
+          [inputFormatter]="formatter" [resultFormatter]="formatter" />
+        <span *ngIf="searching">searching...</span>
+        <div class="form-control-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+      </div>
+    <pre class="card">{{showData()}}</pre>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+        <div class="col-md-5">
+            <p class="text-muted text-center"><small>This is a sample implementation of type-ahead feature using HTTP</small></p>
+        </div>
+    </div>
+  <div class="row">
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
