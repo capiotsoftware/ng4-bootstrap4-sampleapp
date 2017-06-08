@@ -16,7 +16,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
     styleUrls: ["index.component.scss"]
 })
 export class IndexComponent implements OnInit {
-    
+
     private getReqData:any;
     model: any;
     searching = false;
@@ -59,5 +59,5 @@ export class IndexComponent implements OnInit {
 			.switchMap(term => this.http.get("/posts"))
 			.do(() => this.searching = false);
 
-    
+
 }

@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
 import { IndexSubPage1Component } from './index/subPages/subPage1/subPage1.component';
-import { IndexSubPage2Component } from './index/subPages/subPage2/subPage2.component';
+import { IndexSubPage2Component } from './index/subPages/subPage2/subpage2.component';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 

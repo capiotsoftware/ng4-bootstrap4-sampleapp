@@ -1,24 +1,20 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { Router } from '@angular/router';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {Router} from '@angular/router';
+import {ToastsManager} from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'login',
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 
   data = {
     username: null,
     password: null,
   };
 
-  constructor(
-    private router: Router,
-    public toast1: ToastsManager,
-    public vcr: ViewContainerRef
-  ) {
+  constructor(private router: Router, public toast1: ToastsManager, public vcr: ViewContainerRef) {
     this.toast1.setRootViewContainerRef(vcr);
   };
 
@@ -27,8 +23,8 @@ export class LoginComponent implements OnInit{
   };
 
   ngOnDestroy(): void {
-        // this.toast1.dispose();
-    }
+    //this.toast1.dispose();
+  }
 
   checkLogin(): any {
     if (localStorage.getItem("username")) {
